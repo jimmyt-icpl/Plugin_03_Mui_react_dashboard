@@ -129,14 +129,14 @@ const AgentList = () => {
         agentListData.affected_items.map(function(item){
             let agent = [];    
             agent.push(item.id );
-            agent.push("-");
+            agent.push(item.name);
             agent.push(item.ip );
             agent.push("-");
             agent.push("-");
-            agent.push( "-");
-            agent.push( "-");
+            agent.push(item.node_name);
+            agent.push(item.version);
+            agent.push(item.dateAdd);
             agent.push("-");
-            agent.push( "-");
             agent.push(item.status);
             agent.push("-");
 
@@ -156,7 +156,7 @@ console.log(data);
     <CacheProvider value={muiCache}>
       <ThemeProvider theme={createTheme()}>
         <MUIDataTable
-          title={"ACME Employee list"}
+          title={"Agents( )"}
           data={data}
           columns={columns}
           options={options}
